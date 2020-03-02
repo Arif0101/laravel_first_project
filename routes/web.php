@@ -11,26 +11,39 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+ Route::get('/', 'PostController@home');
 
-Route::get('/about', function () {
-    return "Hi I am About";
-});
+ Route::get('/about', 'PostController@about');
 
-Route::get('/contact', function () {
-    return "Hi am i contact?";
-});
+ Route::get('/gallery', 'PostController@gallery');
 
-Route::get('/page/{id}/{name}', function ($id, $name) {
-    return "This is page number ". $id ." ". "and My Name is"  . " " . $name; 
-});
+ Route::get('/location', 'PostController@location');
 
-Route::get('admin/posts/example', array('as'=>'admin.home', function(){
+ Route::get('/contact', 'PostController@contact');
 
-    $url = route('admin.home');
+ Route::post('/contact', 'PostController@contactHandler');
 
-    return "this url is " . $url;
+ Route::get('/posts/{id}', 'PostController@posts');
  
-}));
+ //Route::get('/about', function () {
+ //    return "Hi I am About";
+ //});
+
+// Route::get('/contact', function () {
+//     return "Hi am i contact?";
+// });
+
+// Route::get('/page/{id}/{name}', function ($id, $name) {
+//     return "This is page number ". $id ." ". "and My Name is"  . " " . $name;
+// });
+
+// Route::get('admin/posts/example', array('as'=>'admin.home', function(){
+
+//     $url = route('admin.home');
+
+//     return "this url is " . $url;
+
+// }));
+
+
+
