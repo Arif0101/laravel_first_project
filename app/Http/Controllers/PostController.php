@@ -15,8 +15,7 @@ class PostController extends Controller
 
         $rules = [
             'name'=>'required|min:5',
-            'email' =>'required|email'
-         
+            'email' =>'required|email'         
         ];
 
         $this->validate($request, $rules);

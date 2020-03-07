@@ -12,19 +12,20 @@
 */
 
  Route::get('/', 'PostController@home');
- Route::post('/form' , 'PostController@formhandler');
- Route::get('/about', 'PostController@about');
+ Route::group(['prefix' => 'raihan'], function(){
+    Route::post('/form' , 'PostController@formhandler');
+    Route::get('/about', 'PostController@about')->name('details');
 
- Route::get('/gallery', 'PostController@gallery');
+    Route::get('/gallery', 'PostController@gallery')->name('photos');
 
- Route::get('/location', 'PostController@location');
+    Route::get('/location', 'PostController@location')->name('place');
 
- Route::get('/contact', 'PostController@contact');
+    Route::get('/contact', 'PostController@contact')->name('findus');
 
- Route::post('/contact', 'PostController@contactHandler');
+    Route::post('/contact', 'PostController@contactHandler');
 
- Route::get('/posts/{id}', 'PostController@posts');
- 
+    Route::get('/posts/{id}', 'PostController@posts');
+ });
  //Route::get('/about', function () {
  //    return "Hi I am About";
  //});

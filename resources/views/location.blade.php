@@ -1,14 +1,7 @@
 @extends('layout')
 
 @section('content')
-<nav>
-    <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Famous Places</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Location</a></li>
-      <li><a href="#">Popular Food</a></li>
-    </ul>
+@include('navbar'); 
   </nav>
   
   <article>

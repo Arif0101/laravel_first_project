@@ -8,9 +8,7 @@
 </head>
 <body>       
 
-<header>
-  <h2>CITIES</h2>
-</header>
+@include('common.header')
 
 <section>  
   @if(count($errors)>0)
@@ -25,9 +23,7 @@
 
 </section>
 
-<footer>
-  <p>Footer</p>
-</footer>
+@include('common.footer')
 
 </body>
 </html>
