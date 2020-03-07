@@ -12,7 +12,7 @@
 */
 
  Route::get('/', 'PostController@home');
-
+ Route::post('/form' , 'PostController@formhandler');
  Route::get('/about', 'PostController@about');
 
  Route::get('/gallery', 'PostController@gallery');

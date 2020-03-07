@@ -10,6 +10,21 @@ class PostController extends Controller
 
         return view ('home'); 
     }
+
+    public function formhandler(Request $request){
+
+        $rules = [
+            'name'=>'required|min:5',
+            'email' =>'required|email'
+         
+        ];
+
+        $this->validate($request, $rules);
+
+        return $request-> all();        
+    }
+
+
     public function about(){
 
         return view ('about'); 
